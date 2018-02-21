@@ -7,17 +7,13 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost:27017', (err, db) => {
-    if (err) throw err;
-    console.log(db);
-}).then(()=> {console.log('connected');})
-  .catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017`)});
+mongoose.connect('mongodb://localhost:27017');
 
 // use body parser
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
-// une cors for cross origin connection
+// for cross origin connection
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://127.0.0.1:3000");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
