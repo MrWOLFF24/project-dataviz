@@ -14,7 +14,7 @@ MongoClient.connect("mongodb://localhost:27017/", function(error, client) {
     console.log("Connecté à la base de données");
     db = client.db(dbName);
     db.collection('dataviz').find().toArray((err, res) => {
-        //console.log(res);
+        console.log("donnee recupere avec succee");
     });
 });
 

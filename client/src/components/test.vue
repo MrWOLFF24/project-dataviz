@@ -22,8 +22,10 @@
       methods: {
         async getPosts () {
           const response = await DataService.fetchDatas();
-          this.posts = response.data[0].rowSet;
-          console.log(this.posts);
+          const NBAData = response.data[0].resultSets;
+          NBAData.forEach((res) => {
+            console.log(res);
+          });
         }
       }
     }
