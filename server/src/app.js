@@ -2,12 +2,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 //const cors = require('cors');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
+const MongoClient = require("mongodb").MongoClient;
+const dbName = "test";
+var db;
 
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost:27017');
+MongoClient.connect("mongodb://localhost:27017/", function(error, client) {
+    if (error) throw error;
+    console.log("Connecté à la base de données");
+    db = client.db(dbName);
+    db.collection('dataviz').find().toArray((err, res) => {
+        //console.log(res);
+    });
+});
 
 // use body parser
 app.use(morgan('combined'));
@@ -23,13 +32,9 @@ app.use(function(req, res, next) {
 
 // send data with express
 app.get('/data', (req, res) => {
-    res.send(
-        [{
-            title: "Hello World!",
-            description: "Hi there! How are you?",
-
-        }]
-    )
+    db.collection('dataviz').find().toArray((err, response) => {
+        res.send(response);
+    });
 });
 
 // listen on port 8081
