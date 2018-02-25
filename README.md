@@ -1,6 +1,6 @@
 # Project SPORTS DATAVIZ
 
-> api create on heroku server
+> api created on heroku server
 
 - data can be fetched here: https://apidatavision.herokuapp.com/data
 
@@ -11,6 +11,9 @@
 ## Build Setup
 
 ``` bash
+# go to dicectory
+cd server
+
 # install dependencies
 npm install
 
