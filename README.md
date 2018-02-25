@@ -1,3 +1,3 @@
 # Project SPORTS DATAVIZ
 
-- Coming soon
+- Api server disponible a cette adresse: https://apidatavision.herokuapp.com/data

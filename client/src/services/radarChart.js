@@ -15,25 +15,25 @@ export default {
     this.gradient2.addColorStop(1, 'rgba(0, 231, 255, 0)');
 
     this.renderChart({
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['Boston', 'Cleveland', 'Toronto', 'Washington', 'Atlanta', 'Milwaukee', 'Indiana'],
       datasets: [
         {
-          label: 'Data One',
+          label: 'Wins',
           borderColor: '#FC2525',
           pointBackgroundColor: 'white',
           borderWidth: 1,
           pointBorderColor: 'white',
           backgroundColor: this.gradient,
-          data: [40, 39, 10, 40, 39, 80, 40]
+          data: [51, 51, 50, 48, 42, 40, 39]
         },
         {
-          label: 'Data Two',
+          label: 'Loose',
           borderColor: '#05CBE1',
           pointBackgroundColor: 'white',
           pointBorderColor: 'white',
           borderWidth: 1,
           backgroundColor: this.gradient2,
-          data: [60, 55, 32, 10, 2, 12, 53]
+          data: [29, 29, 31, 32, 48, 40, 41]
         }
       ]
     }, {responsive: true, maintainAspectRatio: false, scaleFontColor: "#FFF"})
