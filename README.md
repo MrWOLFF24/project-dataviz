@@ -11,7 +11,7 @@
 ## Build Setup
 
 ``` bash
-# go to dicectory
+# go to directory
 cd server
 
 # install dependencies
